@@ -57,6 +57,7 @@ class User extends React.Component {
 }
 
 const RightSide = props => {
+    console.log("IN RIght Side")
   return (
     <div
       className="right-side"

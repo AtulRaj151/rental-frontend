@@ -23,7 +23,10 @@ function Header(props) {
                   <SearchIcon/>  
              </div>
              <div className="header__right">
-                     <p>Rent your Houses</p>
+                    <Link to="admin/auth" className="admin__login">
+                     <p >Rent your Houses</p>
+                      
+                    </Link>
                      <HomeWork/>
                      <ExpandMore/>
                      <Link to="users/auth">

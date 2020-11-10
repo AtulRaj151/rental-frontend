@@ -38,3 +38,13 @@
   width: 15vw;
   margin-right: 80px;
 }
+
+.admin__login {
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 20px;
+  color: black;
+}
+.admin__login:hover {
+  background-color: rgb(241, 240, 240);
+}
