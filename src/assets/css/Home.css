@@ -1,0 +1,7 @@
+.home__section {
+  display: flex;
+  padding: 30px;
+}
+.card {
+  margin: 10px;
+}
