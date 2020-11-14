@@ -2,9 +2,12 @@ import React from 'react';
 import '../assets/css/Header.css';
 import SearchIcon from '@material-ui/icons/Search';
 import { ExpandMore, HomeWork } from '@material-ui/icons';
-import { Avatar } from '@material-ui/core';
 import logo from '../assets/images/rental.PNG'
 import {Link} from 'react-router-dom'
+import MenuListComposition from './Menu/MenuBar';
+
+
+
 
 function Header(props) {
     return (
@@ -29,9 +32,14 @@ function Header(props) {
                     </Link>
                      <HomeWork/>
                      <ExpandMore/>
-                     <Link to="users/auth">
-                     <Avatar/>
-                     </Link>
+                     {/* <Link to="users/auth"> */}
+                     
+                       <MenuListComposition/>
+                        
+                          
+                        
+                        
+                     {/* </Link> */}
                      
              </div>
         </div>

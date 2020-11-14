@@ -1,30 +1,30 @@
 import { getFormBody} from '../helper/util'
 import {
-    USER_LOGIN_START,
-    USER_CLEAR_AUTH_STATE,
-    USER_LOGIN_SUCCESS,
-    USER_LOGIN_FAILED,
-    USER_SIGNUP_FAILED,
-    USER_SIGNUP_SUCCESS,
-    USER_SIGNUP_START
+    ADMIN_LOGIN_START,
+    ADMIN_CLEAR_AUTH_STATE,
+    ADMIN_LOGIN_SUCCESS,
+    ADMIN_LOGIN_FAILED,
+    ADMIN_SIGNUP_FAILED,
+    ADMIN_SIGNUP_SUCCESS,
+    ADMIN_SIGNUP_START
 
 } from './actionTypes';
 
 export function clearAuthState() {
     return {
-      type: USER_CLEAR_AUTH_STATE,
+      type: ADMIN_CLEAR_AUTH_STATE,
     };
   }
 export function startLogin() {
     return {
-      type: USER_LOGIN_START,
+      type: ADMIN_LOGIN_START,
     };
   }
 export function login(email,password) {
   
      return (dispatch) => {
           dispatch(startLogin());
-          const url = 'http://localhost:8001/signin';
+          const url = 'http://localhost:8000/signin';
           fetch(url,{
               method:'POST',
             headers: {
@@ -48,14 +48,14 @@ export function login(email,password) {
 }
 export function loginFailed(error) {
     return {
-      type: USER_LOGIN_FAILED,
+      type: ADMIN_LOGIN_FAILED,
       error,
     };
   }
   
   export function loginSuccessful(user) {
     return {
-      type: USER_LOGIN_SUCCESS,
+      type: ADMIN_LOGIN_SUCCESS,
       user,
     };
   }
@@ -63,12 +63,12 @@ export function loginFailed(error) {
 //   signup
 export function startSignup() {
     return {
-      type: USER_SIGNUP_START,
+      type: ADMIN_SIGNUP_START,
     };
   }
 export function signup(email, password, name) {
     return (dispatch) => {
-      const url = 'http://localhost:8001/signup';
+      const url = 'http://localhost:8000/signup';
       fetch(url, {
         method: 'POST',
         headers: {
@@ -96,14 +96,14 @@ export function signup(email, password, name) {
 
   export function signupFailed(error) {
     return {
-      type: USER_SIGNUP_FAILED,
+      type: ADMIN_SIGNUP_FAILED,
       error,
     };
   }
   
   export function signupSuccessful(user) {
     return {
-      type: USER_SIGNUP_SUCCESS,
+      type: ADMIN_SIGNUP_SUCCESS,
       user,
     };
   }

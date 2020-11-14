@@ -50,7 +50,8 @@ class UserLogin extends Component {
         {error && <div className=" header">{error}</div>}
         <div className="content">
           <div className="image">
-            <img src={loginImg}  alt=""/>
+            <img src={loginImg}
+              alt=""/>
           </div>
           <div className="form">
             <div className="form-group">

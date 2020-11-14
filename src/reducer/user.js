@@ -1,9 +1,7 @@
-import { LOGIN_START,CLEAR_AUTH_STATE,LOGIN_SUCCESS,LOGIN_FAILED,
-    SIGNUP_FAILED,
-    SIGNUP_SUCCESS,
-    SIGNUP_START
-
-
+import { USER_LOGIN_START,USER_CLEAR_AUTH_STATE,USER_LOGIN_SUCCESS,USER_LOGIN_FAILED,
+    USER_SIGNUP_FAILED,
+    USER_SIGNUP_SUCCESS,
+    USER_SIGNUP_START,
 } from '../action/actionTypes'
 const initialState = {
      user: {},
@@ -11,20 +9,19 @@ const initialState = {
      isLoggedin: false,
      inProgress: false,
 }
-export default function auth(state = initialState,action){
-    console.log("action initiated",action)
+export default function auth(state = initialState,action){    
       switch(action.type){
-          case  LOGIN_START:
+          case  USER_LOGIN_START:
             return {
               ...state,
               inProgress: true,
             };
-            case CLEAR_AUTH_STATE:
+            case USER_CLEAR_AUTH_STATE:
                 return {
                   ...state,
                   error: null,
                 };
-                case LOGIN_SUCCESS:
+                case USER_LOGIN_SUCCESS:
                     return {
                       ...state,
                       user: action.user,
@@ -32,25 +29,25 @@ export default function auth(state = initialState,action){
                     //   inProgress: false,
                       error: null,
                     };
-                  case LOGIN_FAILED:
+                  case USER_LOGIN_FAILED:
                     return {
                       ...state,
                       inProgress: false,
                       error: action.error,
                     };
-                    case SIGNUP_START:
+                    case USER_SIGNUP_START:
                         return {
                           ...state,
                           inProgress: true,
                         };
-                    case SIGNUP_SUCCESS:
+                    case USER_SIGNUP_SUCCESS:
                         return {
                           ...state,
                           user: action.user,
                           isLoggedin: true,
                           error: null,
                         };
-                      case SIGNUP_FAILED:
+                      case USER_SIGNUP_FAILED:
                         return {
                           ...state,
                           inProgress: false,
