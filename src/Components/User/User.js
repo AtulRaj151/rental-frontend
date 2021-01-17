@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import "../../assets/css/User.css";
 import { UserLogin, UserSignUp } from "./";
 
@@ -30,9 +31,15 @@ class User extends React.Component {
   }
 
   render() {
+    const {isLoggedin} = this.props;
     const { isLogginActive } = this.state;
     const current = isLogginActive ? "Register" : "Login";
     const currentActive = isLogginActive ? "login" : "register";
+
+    if(isLoggedin){
+      console.log("This is rendered")
+       return <Redirect to="/"/>
+    }
     return (
       <div className="User">
         <div className="login">

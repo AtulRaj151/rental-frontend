@@ -1,9 +1,16 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import SearchResult from './SearchResult'
-function SearchPage() {  
-
+function SearchPage(props) {  
+     
+       const { isLoggedInUser} = props;
+       console.log("ISLOGGEDIN",isLoggedInUser)
+       if(!isLoggedInUser){
+         return  <Redirect to="/users/auth"/>
+       }
     return (
+          
         <div className="searchPage">
             <div className="seatchPage__info">
                 <p>62 stays . 26 augutst to 30 august . 2 guest</p>

@@ -40,10 +40,8 @@ class UserLogin extends Component {
         }
       };
     render() {
-        const {inProgress,error,isLoggedin} = this.props.user;
-        if (isLoggedin) {
-            return <Redirect to='/' />;
-          }
+        const {inProgress,error} = this.props.user;
+      
         return (
             <div className="base-container" ref={this.props.containerRef}>
         <div className="header">User Login</div>

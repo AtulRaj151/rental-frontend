@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 import { Avatar } from '@material-ui/core';
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,9 +74,9 @@ export default function MenuListComposition() {
               <Paper>
                 <ClickAwayListener onClickAway={handleClose}>
                   <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem onClick={handleClose}><Link to="/users/auth" style={ {textDecoration:'none'}}><Button>Login</Button></Link></MenuItem>
+                    <MenuItem onClick={handleClose}><Link to="/users/account" style={ {textDecoration:'none'}}><Button>Account</Button></Link></MenuItem>
+                    <MenuItem onClick={handleClose}><Link to="/users/signup" style={ {textDecoration:'none'}}><Button>Logout</Button></Link></MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
